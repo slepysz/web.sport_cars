@@ -12,7 +12,7 @@
             padding: 0;
         }
         h1 {
-            background-color: #1e90ff;
+            background-color: #000000;
             color: white;
             padding: 20px;
             text-align: center;
@@ -28,7 +28,7 @@
         .gallery img {
             max-width: 200px;
             height: auto;
-            border: 2px solid #1e90ff;
+            border: 2px solid #ffffff;
             border-radius: 10px;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -43,7 +43,7 @@
             margin: 20px auto;
             padding: 20px;
             background-color: #fff;
-            border: 2px solid #1e90ff;
+            border: 2px solid #000000;
             border-radius: 10px;
             max-width: 600px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -54,12 +54,12 @@
     </style>
 </head>
 <body>
-    <h1>Galerie aut</h1>
+    <h1>Sport cars</h1>
     <div class="gallery">
         <!-- Obrázky aut -->
-        <img src="fotky/auto1.jpg" alt="Auto 1" onclick="zobrazDetaily(1)">
-        <img src="fotky/auto2.jpg" alt="Auto 2" onclick="zobrazDetaily(2)">
-        <img src="fotky/auto3.jpg" alt="Auto 3" onclick="zobrazDetaily(3)">
+        <img src="c:\Users\Ladislav Slapnička\Desktop\web auta\IMG_0294.jpg" alt="Auto 1" onclick="zobrazDetaily(1)">
+        <img src="c:\Users\Ladislav Slapnička\Desktop\web auta\IMG_0888.jpg" alt="Auto 2" onclick="zobrazDetaily(2)">
+        <img src="c:\Users\Ladislav Slapnička\Downloads\IMG_8836.jpg" alt="Auto 3" onclick="zobrazDetaily(3)">
     </div>
 
     <!-- Sekce pro zobrazení detailů -->
@@ -74,27 +74,24 @@
     <script>
         // Data o autech
         const auta = {
-    1: {
-        nazev: "Škoda Octavia",
-        popis: "Oblíbený rodinný vůz s prostorným kufrem.",
-        rok: "Rok výroby: 2018",
-        vykon: "Výkon: 150 koní",
-        fotky: ["fotky/auto1-1.jpg", "fotky/auto1-2.jpg", "fotky/auto1-3.jpg"]
-    2: {
-        nazev: "Volkswagen Golf",
-        popis: "Kompaktní auto s moderními technologiemi.",
-        rok: "Rok výroby: 2020",
-        vykon: "Výkon: 140 koní",
-        fotky: ["fotky/auto2-1.jpg", "fotky/auto2-2.jpg", "fotky/auto2-3.jpg"]
-    3: {
-        nazev: "BMW 3 Series",
-        popis: "Luxusní sedan s dynamickým výkonem.",
-        rok: "Rok výroby: 2019",
-        vykon: "Výkon: 200 koní",
-        fotky: ["fotky/auto3-1.jpg", "fotky/auto3-2.jpg", "fotky/auto3-3.jpg"]
-    }
-};
-
+            1: {
+                nazev: "Mercedes-Benz S560",
+                popis: "Sportovní a luxusní vůz",
+                rok: "Rok výroby: 2019",
+                vykon: "Výkon: 545 koní"
+            },
+            2: {
+                nazev: "Chevrolet Camaro RS",
+                popis: "Sportovní vůz",
+                rok: "Rok výroby: 2018",
+                vykon: "Výkon: 350 koní"
+            },
+            3: {
+                nazev: "Ford Mustang GT",
+                popis: "Sportovní vůz",
+                rok: "Rok výroby: 2019",
+                vykon: "Výkon: 450 koní"
+            }
         };
 
         // Zobrazení detailů auta
