@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie aut</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background-color: #1e90ff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin: 0;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            padding: 20px;
+        }
+        .gallery img {
+            max-width: 200px;
+            height: auto;
+            border: 2px solid #1e90ff;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .details {
+            display: none;
+            text-align: center;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #1e90ff;
+            border-radius: 10px;
+            max-width: 600px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .details p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Galerie aut</h1>
+    <div class="gallery">
+        <!-- Obrázky aut -->
+        <img src="fotky/auto1.jpg" alt="Auto 1" onclick="zobrazDetaily(1)">
+        <img src="fotky/auto2.jpg" alt="Auto 2" onclick="zobrazDetaily(2)">
+        <img src="fotky/auto3.jpg" alt="Auto 3" onclick="zobrazDetaily(3)">
+    </div>
+
+    <!-- Sekce pro zobrazení detailů -->
+    <div id="detaily" class="details">
+        <h2 id="nazev"></h2>
+        <p id="popis"></p>
+        <p id="rok"></p>
+        <p id="vykon"></p>
+        <button onclick="skrytDetaily()">Zavřít</button>
+    </div>
+
+    <script>
+        // Data o autech
+        const auta = {
+    1: {
+        nazev: "Škoda Octavia",
+        popis: "Oblíbený rodinný vůz s prostorným kufrem.",
+        rok: "Rok výroby: 2018",
+        vykon: "Výkon: 150 koní",
+        fotky: ["fotky/auto1-1.jpg", "fotky/auto1-2.jpg", "fotky/auto1-3.jpg"]
+    2: {
+        nazev: "Volkswagen Golf",
+        popis: "Kompaktní auto s moderními technologiemi.",
+        rok: "Rok výroby: 2020",
+        vykon: "Výkon: 140 koní",
+        fotky: ["fotky/auto2-1.jpg", "fotky/auto2-2.jpg", "fotky/auto2-3.jpg"]
+    3: {
+        nazev: "BMW 3 Series",
+        popis: "Luxusní sedan s dynamickým výkonem.",
+        rok: "Rok výroby: 2019",
+        vykon: "Výkon: 200 koní",
+        fotky: ["fotky/auto3-1.jpg", "fotky/auto3-2.jpg", "fotky/auto3-3.jpg"]
+    }
+};
+
+        };
+
+        // Zobrazení detailů auta
+        function zobrazDetaily(id) {
+            const details = document.getElementById('detaily');
+            const nazev = document.getElementById('nazev');
+            const popis = document.getElementById('popis');
+            const rok = document.getElementById('rok');
+            const vykon = document.getElementById('vykon');
+
+            // Načtení dat o autě
+            const auto = auta[id];
+            nazev.textContent = auto.nazev;
+            popis.textContent = auto.popis;
+            rok.textContent = auto.rok;
+            vykon.textContent = auto.vykon;
+
+            // Zobrazení sekce s detaily
+            details.style.display = "block";
+        }
+
+        // Skrytí detailů auta
+        function skrytDetaily() {
+            document.getElementById('detaily').style.display = "none";
+        }
+    </script>
+</body>
+</html>
